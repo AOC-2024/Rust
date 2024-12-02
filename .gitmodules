@@ -1,3 +1,6 @@
 [submodule "packages/day_01"]
 	path = packages/day_01
 	url = https://github.com/AOC-2024/rust_day_01.git
+[submodule "packages/day_02"]
+	path = packages/day_02
+	url = https://github.com/AOC-2024/rust_day_02.git
