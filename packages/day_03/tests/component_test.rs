@@ -7,5 +7,5 @@ fn it_should_uncorrupt_file() {
 
 #[test]
 fn it_should_uncorrupt_file_with_closures() {
-    assert_eq!(result_uncorrupt_file_with_closures("tests/resources/puzzle.txt"), 48);
+    assert_eq!(result_uncorrupt_file_with_closures("tests/resources/puzzle_with_closures.txt"), 48);
 }

@@ -8,6 +8,12 @@ pub fn result_uncorrupt_file(input_path: &str) -> u32 {
     .fold(0, |acc, next_value| acc + next_value.0 * next_value.1)
 }
 
+pub fn result_uncorrupt_file_with_closures(input_path: &str) -> u32 {
+    let input = read_file(input_path);
+
+    0
+}
+
 fn read_file(input_path: &str) -> String {
     read_to_string(input_path).unwrap()
 }
