@@ -10,8 +10,9 @@ pub fn result_uncorrupt_file(input_path: &str) -> u32 {
 
 pub fn result_uncorrupt_file_with_closures(input_path: &str) -> u32 {
     let input = read_file(input_path);
-
-    0
+    
+    find_figures_to_multiply_with_closures(&input).iter()
+    .fold(0, |acc, next_value| acc + next_value.0 * next_value.1)
 }
 
 fn read_file(input_path: &str) -> String {
@@ -28,6 +29,19 @@ fn find_figures_to_multiply(input: &str) -> Vec<ValidNumbers> {
     }).collect()
 }
 
+fn find_figures_to_multiply_with_closures(input: &str) -> Vec<ValidNumbers> {
+    let mut valid_numbers: Vec<ValidNumbers> = Vec::new();
+
+    input.split("do")
+        .map(|part| part.to_string())
+        .filter(|part| !part.starts_with("n't()"))
+        .for_each(|part| {
+            valid_numbers.extend(find_figures_to_multiply(&part));
+        });
+    
+    valid_numbers
+}
+
 #[derive(PartialEq)]
 #[derive(Debug)]
 struct ValidNumbers(u32, u32);
@@ -35,6 +49,16 @@ struct ValidNumbers(u32, u32);
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn should_find_numbers_to_multiply_with_closures_return_one_valid_number_when_one_path_one_do_dont_closure() {
+        assert_eq!(find_figures_to_multiply_with_closures("mul(5,5)don't()mul(5,6)"), vec![ValidNumbers(5, 5)]);
+    }
+
+    #[test]
+    fn should_find_numbers_to_multiply_with_closures_return_one_valid_number_when_one_path_no_closure() {
+        assert_eq!(find_figures_to_multiply_with_closures("mul(5,5)"), vec![ValidNumbers(5, 5)]);
+    }
 
     #[test]
     fn should_read_file() {
