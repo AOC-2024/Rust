@@ -15,3 +15,5 @@ pnpx lerna run test
 ```
 pnpx lerna run run
 ```
+
+git push --recurse-submodules on-demand
