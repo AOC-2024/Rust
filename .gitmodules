@@ -22,3 +22,9 @@
 [submodule "packages/day_09"]
 	path = packages/day_09
 	url = https://github.com/AOC-2024/rust_day_09.git
+[submodule "packages/day_10"]
+	path = packages/day_10
+	url = https://github.com/AOC-2024/rust_day_10.git
+[submodule "packages/day_11"]
+	path = packages/day_11
+	url = https://github.com/AOC-2024/rust_day_11.git
