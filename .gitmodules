@@ -10,15 +10,22 @@
 [submodule "packages/day_04"]
 	path = packages/day_04
 	url = https://github.com/AOC-2024/rust_day_04.git
+[submodule "packages/day_05"]
+	path = packages/day_05
+	url = https://github.com/AOC-2024/rust_day_05.git
 [submodule "packages/day_06"]
 	path = packages/day_06
 	url = https://github.com/AOC-2024/rust_day_06.git
 [submodule "packages/day_07"]
 	path = packages/day_07
 	url = https://github.com/AOC-2024/rust_day_07.git
-[submodule "packages/day_05"]
-	path = packages/day_05
-	url = https://github.com/AOC-2024/rust_day_05.git
 [submodule "packages/day_10"]
 	path = packages/day_10
 	url = https://github.com/AOC-2024/rust_day_10.git
+[submodule ".\\packages\\day_13\\"]
+	path = .\\packages\\day_13\\
+	url = https://github.com/AOC-2024/rust_day_13.git
+[submodule ".\\packages\\day_14\\"]
+	path = .\\packages\\day_14\\
+	url = https://github.com/AOC-2024/rust_day_14.git
+
